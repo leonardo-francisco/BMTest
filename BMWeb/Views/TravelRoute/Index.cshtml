@@ -1,0 +1,114 @@
+﻿@model IEnumerable<BMWeb.DTO.TravelRouteDTO>
+
+@{
+    ViewData["Title"] = "Travel Route Page";
+}
+
+@section Scripts{
+    <script>
+        $(document).ready(function() {
+            $('#example').dataTable();
+        });
+
+        function Destroy(id) {
+            $(".btnDel").on('click', function() {
+                $.ajax({
+                    url: "/TravelRoute/DeleteRoute?id=" + id,
+                    method: "DELETE",
+                    success: function(data) {
+                        location.reload(true);
+                    }
+                });
+            });
+        }
+
+        $(".alert-success").fadeTo(2000, 500).slideUp(500, function() {
+            $(".alert-success").slideUp(500);
+            location.reload(true);
+        });
+
+    </script>
+}
+
+    @if (TempData["crtSucc"] != null)
+{
+    <div class="alert alert-success" role="alert">
+        @TempData["crtSucc"].ToString()
+    </div>
+}
+
+@if (TempData["edtSucc"] != null)
+{
+    <div class="alert alert-success" role="alert">
+        @TempData["edtSucc"].ToString()
+    </div>
+}
+
+<div class="">
+    <a class="btn btn-success" href="@Url.Action("CreateRoute","TravelRoute")">Cadastrar Rota</a>
+</div>
+<div class="card">
+    <div class="card-header bg-primary" style="color:white; font-weight:400;">
+        Travel Routes
+    </div>
+    <div class="card-body">
+        <table id="example" class="display" style="width:100%">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Origem</th>
+                    <th>Destino</th>
+                    <th>Valor</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.Id</td>
+                        <td>@item.Origem</td>
+                        <td>@item.Destino</td>
+                        <td>@item.Valor</td>
+                        <td>
+                            <div class="dropdown dropdown-action">
+                                <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></a>
+                                <div class="dropdown-menu dropdown-menu-right">
+                                    <a class="dropdown-item" href="@Url.Action("EditRoute","TravelRoute", new { id = item.Id})">
+                                        <i class="fa-solid fa-pen-to-square"></i> Edit
+                                    </a>
+                                    <a class="dropdown-item" href="#" onclick="Destroy('@item.Id')" data-toggle="modal" data-target="#delete_route">
+                                        <i class="fa-solid fa-trash-can"></i> Delete
+                                    </a>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!--Delete Modal-->
+<div class="modal fade" id="delete_route" tabindex="-1" role="dialog" aria-labellebdy="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Bye Bye Route</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Tem certeza que deseja deletar esta rota?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-danger btn-pill btnDel">Delete</button>
+                <button type="button" class="btn btn-dark btn-pill" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+

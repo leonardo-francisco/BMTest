@@ -1,0 +1,36 @@
+﻿@model BMWeb.DTO.TravelRouteDTO
+@{
+    ViewData["Title"] = "Criar Travel Route Page";
+}
+
+<div class="card">
+    <div class="card-header bg-primary" style="color:white; font-weight:400;">
+        Cadastrar Rota
+    </div>
+    <div class="card-body">
+        <form asp-action="CreateRoute" method="post">
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="inputEmail4">Origem</label>
+                    <input type="text" class="form-control" asp-for="Origem" placeholder="Origem">
+                    <span asp-validation-for="Origem" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="inputPassword4">Destino</label>
+                    <input type="text" class="form-control" asp-for="Destino" placeholder="Destino">
+                    <span asp-validation-for="Destino" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="inputCity">Valor</label>
+                    <input type="number" class="form-control" asp-for="Valor" value=0>
+                    <span asp-validation-for="Valor" class="text-danger"></span>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Cadastrar</button>
+        </form>
+    </div>
+</div>
+
+

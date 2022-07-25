@@ -1,0 +1,30 @@
+﻿@model BMWeb.DTO.TravelRouteDTO
+@{
+    ViewData["Title"] = "Cheapest Route Page";
+}
+
+<div class="card">
+    <div class="card-header">
+        Featured
+    </div>
+    <div class="card-body">
+        <form asp-action="CheapestRoute" method="post">
+            <div class="row">
+                <div class="col">
+                    <input type="text" class="form-control" asp-for="Origem" placeholder="Origem" required> 
+                   
+                </div>
+                <div class="col">
+                    <input type="text" class="form-control" asp-for="Destino" placeholder="Destino" required>   
+                    
+                </div>
+                <button type="submit" class="btn btn-primary">Pesquisar</button>
+            </div>
+        </form>
+    </div>
+</div>
+ <hr />
+    @if (ViewBag.PesqRotas != null)
+    {
+        <partial name="_ListPesqRotas" model="ViewBag.PesqRotas" />
+    }

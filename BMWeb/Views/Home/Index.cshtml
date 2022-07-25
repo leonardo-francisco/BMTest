@@ -1,0 +1,27 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="card">
+    <div class="card-header">
+        Featured
+    </div>
+    <div class="card-body">
+        <form>
+            <div class="row">
+                <div class="col">
+                    <input type="text" class="form-control" placeholder="Origem">
+                </div>
+                <div class="col">
+                    <input type="text" class="form-control" placeholder="Destino">
+                </div>
+                <a href="#" class="btn btn-primary">Pesquisar</a>
+            </div>
+        </form>
+    </div>
+</div>
+ <hr />
+    @if (ViewBag.PesqAtas != null)
+    {
+        <partial name="_ListPesqAtas" model="ViewBag.PesqAtas" />
+    }

@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32630.192
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BMAPI", "BMAPI\BMAPI.csproj", "{26ECDF9A-DB92-4CF4-9F0A-B17F13633E20}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BMWeb", "BMWeb\BMWeb.csproj", "{B53D1F61-8999-4A54-B5CD-788A14B5D3E6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{26ECDF9A-DB92-4CF4-9F0A-B17F13633E20}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26ECDF9A-DB92-4CF4-9F0A-B17F13633E20}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26ECDF9A-DB92-4CF4-9F0A-B17F13633E20}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26ECDF9A-DB92-4CF4-9F0A-B17F13633E20}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B53D1F61-8999-4A54-B5CD-788A14B5D3E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B53D1F61-8999-4A54-B5CD-788A14B5D3E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B53D1F61-8999-4A54-B5CD-788A14B5D3E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B53D1F61-8999-4A54-B5CD-788A14B5D3E6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F0F11B54-B757-47C3-9D1E-402AC8BB8303}
+	EndGlobalSection
+EndGlobal

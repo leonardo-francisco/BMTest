@@ -1,0 +1,21 @@
+﻿@model IEnumerable<BMWeb.DTO.CheapestDistanceDTO>
+
+<div class="card">
+    <div class="card-header bg-success" style="color:white; font-weight:400;">
+        Resultado da Busca
+    </div>
+    <div class="card-body">
+        @foreach (var item in Model)
+        {
+            <div class="mx-auto" style="width: 200px;">
+                @if (@item.Distancia > 0)
+                {
+                    <span>Resposta: @item.Origem  @item.Destino ao custo de $@item.Distancia</span>
+                }else
+                {
+                    <span>Rota não encontrada ou Não há rota entre os pontos inseridos</span>
+                }            
+            </div>
+        }
+    </div>
+</div>
